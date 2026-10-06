@@ -59,19 +59,19 @@ echo "\n";
 // Comparison Operators
 
 echo "The value of 1==4 is ";
-echo var_dump(1 == 4);
+var_dump(1 == 4);
 echo "\n";
 
 echo "The value of 1!=4 is ";
-echo var_dump(1 != 4);
+var_dump(1 != 4);
 echo "\n";
 
 echo "The value of 1>=4 is ";
-echo var_dump(1 >= 4);
+var_dump(1 >= 4);
 echo "\n";
 
 echo "The value of 1<=4 is ";
-echo var_dump(1 <= 4);
+var_dump(1 <= 4);
 echo "\n";
 
 
@@ -96,35 +96,35 @@ echo "\n";
 // Logical Operators
 
 $myVar = (true and true);
-echo var_dump($myVar);
+var_dump($myVar);
 echo "\n";
 
 $myVar = (false and true);
-echo var_dump($myVar);
+var_dump($myVar);
 echo "\n";
 
 $myVar = (false and false);
-echo var_dump($myVar);
+var_dump($myVar);
 echo "\n";
 
 $myVar = (true and false);
-echo var_dump($myVar);
+var_dump($myVar);
 echo "\n";
 
 $myVar = (true or false);
-echo var_dump($myVar);
+var_dump($myVar);
 echo "\n";
 
 $myVar = (true xor true);
-echo var_dump($myVar);
+var_dump($myVar);
 echo "\n";
 
 $myVar = (false xor false);
-echo var_dump($myVar);
+var_dump($myVar);
 echo "\n";
 
 $myVar = (true and false);
-echo var_dump($myVar);
+var_dump($myVar);
 echo "\n";
 
 ?>
