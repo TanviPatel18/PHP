@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+
+        <h1>Add User</h1>
+        <form action="insert.php" method="POST">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input 
+                    type="text" 
+                    id="firstName" 
+                    name="first_name"
+                    placeholder="Enter first name" 
+                    required
+                >
+            </div>
+            <div class ="form-group">
+                <label for="lastName">Last Name</label>
+                <input 
+                    type="text" 
+                    id="lastName" 
+                    name="last_name"
+                    placeholder="Enter last name" 
+                    required
+                >
+            </div>
+            <div class ="form-group">
+                <label for="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email"
+                    name="email" 
+                    placeholder="Enter email" 
+                    required
+                >
+            </div>
+            <div class ="form-group">
+                <label for="phone">Phone</label>
+                <input 
+                    type="text" 
+                    id="phone"
+                    name="phone" 
+                    placeholder="Enter phone number" 
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    minlength="10"
+                    required
+                >
+            </div>
+            <div class ="form-group">
+                <label for="location">Location</label>
+                <input
+                    type="text" 
+                    id="location" 
+                    name="location"
+                    placeholder="Enter location" 
+                    required
+                >
+            </div>
+            <div class ="form-group">
+                <label for="hobby">Hobby</label>
+                <input 
+                    type="text" 
+                    id="hobby" 
+                    name="hobby"
+                    placeholder="Enter Hobby"
+                >
+            </div>
+            <div class="buttons">
+                <button type="submit" class="save-btn">Save</button>
+                <button type="reset" class="cancel-btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
