@@ -1,0 +1,468 @@
+/* =========================================
+   PRINT REPORT - COMPLETE CSS
+========================================= */
+
+/* -----------------------------------------
+   BASIC PAGE
+----------------------------------------- */
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #eeeeee;
+
+    color: #222;
+}
+
+
+/* -----------------------------------------
+   A4 REPORT PAGE
+----------------------------------------- */
+
+.print-page {
+    width: 210mm;
+    min-height: 297mm;
+
+    margin: 20px auto;
+
+    padding: 18mm;
+
+    box-sizing: border-box;
+
+    background-color: white;
+
+    /* OUTER PAGE BORDER */
+    border: 2px solid #000;
+
+    /* Shadow only visible on screen */
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.print-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    padding-bottom: 12px;
+
+    border-bottom: 2px solid #000;
+}
+
+
+/* Company information */
+
+.company-details {
+    width: 50%;
+}
+
+.company-details h2 {
+    margin: 0 0 6px 0;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+.company-details p {
+    margin: 3px 0;
+
+    font-size: 13px;
+
+    color: #444;
+}
+
+
+/* Report heading */
+
+.report-heading {
+    width: 50%;
+
+    text-align: right;
+}
+
+.report-heading h1 {
+    margin: 10px 0 0 0;
+
+    font-size: 38px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   REPORT INFORMATION
+========================================= */
+
+.report-number {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 12px;
+
+    margin-bottom: 22px;
+
+    font-size: 13px;
+}
+
+
+/* Vertical line between information */
+
+.report-number div + div {
+    border-left: 1px solid #000;
+
+    padding-left: 25px;
+}
+
+
+/* =========================================
+   USER DETAILS TITLE
+========================================= */
+
+.details-title {
+    background-color: #eeeeee;
+
+    border-top: 2px solid #000;
+
+    border-bottom: 2px solid #000;
+
+    padding: 9px 12px;
+
+    margin-bottom: 12px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   USER DETAILS TABLE
+========================================= */
+
+.user-report-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin: 0;
+
+    table-layout: fixed;
+}
+
+
+/* Table heading / label */
+
+.user-report-table th {
+    padding: 8px;
+
+    background-color: #f1f1f1;
+
+    color: #111;
+
+    border: 1px solid #222;
+
+    text-align: left;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    word-break: break-word;
+}
+
+
+.user-report-table td {
+    padding: 8px;
+
+    background-color: white;
+
+    color: #333;
+
+    border: 1px solid #222;
+
+    text-align: left;
+
+    font-size: 12px;
+
+    word-break: break-word;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.report-footer {
+    margin-top: 45px;
+
+    padding-top: 15px;
+
+    border-top: 2px solid #000;
+
+    text-align: center;
+}
+
+
+/* Thank You */
+
+.thank-you {
+    margin: 0 0 8px 0;
+
+    font-family: cursive;
+
+    font-size: 34px;
+
+    font-style: italic;
+
+    font-weight: bold;
+
+    color: #111;
+}
+
+
+/* Footer description */
+
+.report-footer p {
+    margin: 0;
+
+    font-size: 11px;
+
+    color: #666;
+}
+
+
+/* =========================================
+   PRINT / CLOSE BUTTONS
+========================================= */
+
+.print-actions {
+    text-align: center;
+
+    margin-top: 20px;
+}
+
+
+.print-actions button {
+    padding: 9px 20px;
+
+    margin: 4px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background-color: #007bff;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.print-actions button:hover {
+    background-color: #0056b3;
+}
+
+
+/* =========================================
+   PRINT SETTINGS
+========================================= */
+
+@media print {
+
+    /* A4 paper */
+
+    @page {
+        size: A4 portrait;
+
+        margin: 0;
+    }
+
+
+    /* Remove browser page spacing */
+
+    html,
+    body {
+        width: 210mm;
+
+        height: 297mm;
+
+        margin: 0;
+
+        padding: 0;
+
+        background-color: white;
+    }
+
+
+    /* -------------------------------------
+       REPORT PAGE WHEN PRINTING
+    ------------------------------------- */
+
+    .print-page {
+        width: 210mm;
+
+        min-height: 297mm;
+
+        margin: 0;
+
+        padding: 15mm;
+
+        box-sizing: border-box;
+
+        background-color: white;
+
+        /* PAGE BORDER */
+
+        border: 2px solid #000;
+
+        /* Remove screen shadow */
+
+        box-shadow: none;
+    }
+
+
+    /* -------------------------------------
+       HIDE BUTTONS WHILE PRINTING
+    ------------------------------------- */
+
+    .print-actions {
+        display: none !important;
+    }
+
+
+    /* -------------------------------------
+       PREVENT TABLE FROM SPLITTING
+    ------------------------------------- */
+
+    .user-report-table {
+        page-break-inside: avoid;
+    }
+
+
+    .print-header {
+        page-break-inside: avoid;
+    }
+
+
+    .report-number {
+        page-break-inside: avoid;
+    }
+
+
+    .details-title {
+        page-break-inside: avoid;
+    }
+
+
+    .report-footer {
+        page-break-inside: avoid;
+    }
+
+
+    /* -------------------------------------
+       PRINT BACKGROUND COLORS
+    ------------------------------------- */
+
+    .details-title,
+    .user-report-table th {
+
+        -webkit-print-color-adjust: exact;
+
+        print-color-adjust: exact;
+    }
+
+
+    /* -------------------------------------
+       KEEP TABLE BORDERS
+    ------------------------------------- */
+
+    .user-report-table th,
+    .user-report-table td {
+
+        border: 1px solid #222;
+    }
+
+
+    /* -------------------------------------
+       PRINT TEXT COLORS
+    ------------------------------------- */
+
+    body {
+        color: #000;
+    }
+
+
+    .company-details p,
+    .report-footer p {
+
+        color: #444 !important;
+    }
+}
+
+
+/* =========================================
+   SMALL SCREEN
+========================================= */
+
+@media screen and (max-width: 800px) {
+
+    .print-page {
+        width: 95%;
+
+        min-height: auto;
+
+        margin: 10px auto;
+
+        padding: 20px;
+    }
+
+
+    .print-header {
+        flex-direction: column;
+    }
+
+
+    .company-details,
+    .report-heading {
+        width: 100%;
+
+        text-align: left;
+    }
+
+
+    .report-heading h1 {
+        margin-top: 15px;
+
+        font-size: 30px;
+    }
+
+
+    .report-number {
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+    }
+}
