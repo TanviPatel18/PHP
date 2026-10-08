@@ -91,17 +91,75 @@ button:hover {
     margin-bottom: 25px;
 }
 
+/* Users List Header */
+
+.user-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.user-list-header h1 {
+    margin: 0;
+}
+
+/* Header Buttons */
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Add User Button */
+
+.header-buttons .add-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.header-buttons .add-btn:hover {
+    background-color: #218838;
+}
+
+/* Excel Button */
+
+.excel-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.excel-btn:hover {
+    background-color: #218838;
+}
+
 table {
     width: 100%;
+    min-width: 0;
     border-collapse: collapse;
     margin-top: 30px;
+    table-layout: auto;
 }
 
 th,
 td {
-    padding: 12px 15px;
+    padding: 10px 8px;
     border: 1px solid #ddd;
     text-align: left;
+    font-size: 14px;
 }
 
 th {
@@ -115,11 +173,6 @@ tr:nth-child(even) {
 
 tr:hover {
     background-color: #eeeeee;
-}
-
-.add-user-container {
-    text-align: center;
-    margin-top: 25px;
 }
 
 .add-btn {
@@ -167,16 +220,96 @@ tr:hover {
     font-weight: 600;
     margin-left: 5px;
     cursor: pointer;
-    transition: 0.2s;
+    /* transition: 0.2s; */
 }
 
 .delete-btn:hover {
     background-color: #b02a37;
 }
 
-table {
-    width: 100%;
-    min-width: 900px;
-    border-collapse: collapse;
-    margin-top: 30px;
+/* Print Button */
+
+.actions .print-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background-color: #007bff !important;
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.actions .print-btn:hover {
+    background-color: #0056b3 !important;
+}
+
+/* edit imge css */
+
+
+.image-preview {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.image-preview img {
+    display: block;
+    object-fit: cover;
+}
+
+.delete-image-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 28px;
+    height: 28px;
+
+    border: 2px solid #2f343b;
+    border-radius: 50%;
+
+    background-color: white;
+    color: #2f343b;
+
+    font-size: 20px;
+    font-weight: normal;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.delete-image-btn:hover {
+    background-color: #f5f5f5;
+}
+
+/* =========================
+   IMAGE COLUMN
+   ========================= */
+
+table th:nth-child(9),
+table td:nth-child(9) {
+    text-align: left;
+    padding: 14px 12px;
+}
+
+/* Image filename link */
+table td:nth-child(9) a {
+    color: black;
+    /* text-decoration: underline; */
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Hover effect */
+table td:nth-child(9) a:hover {
+    color: #6a35c2;
 }
