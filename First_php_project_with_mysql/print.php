@@ -22,7 +22,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>USER REPORT - <?php echo $row['id']; ?></title>
-    <link rel="stylesheet" href="print.css">
+    <link rel="stylesheet" href="CSS/print.css">
 </head>
 <body>
      <div class="print-page">
