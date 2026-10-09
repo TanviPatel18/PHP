@@ -1,0 +1,786 @@
+/* =========================================================
+   SALARY HISTORY PAGE
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #1f2937;
+}
+
+.salary-page {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #111827;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+    padding: 0 18px;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+
+    color: #374151;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+
+/* =========================================================
+   EMPLOYEE INFORMATION
+   ========================================================= */
+
+.employee-card {
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e5ea;
+    border-radius: 10px;
+
+    padding: 20px 24px;
+
+    margin-bottom: 24px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+
+/* =========================================================
+   EMPLOYEE IMAGE
+   ========================================================= */
+
+.employee-image {
+    flex-shrink: 0;
+}
+
+.employee-image img,
+.no-image {
+    width: 72px;
+    height: 72px;
+
+    border-radius: 8px;
+
+    object-fit: cover;
+}
+
+.no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1ff;
+
+    color: #087ff5;
+
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   EMPLOYEE INFO
+   ========================================================= */
+
+.employee-info {
+    margin-left: 18px;
+}
+
+.employee-info h2 {
+    margin: 0 0 7px;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.employee-info span {
+    display: inline-block;
+
+    margin-right: 22px;
+
+    font-size: 14px;
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   SALARY SECTION
+   ========================================================= */
+
+.section-card {
+    background: #ffffff;
+
+    border: 1px solid #e1e5ea;
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 22px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.section-header h2 {
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   ADD SALARY BUTTON
+   ========================================================= */
+
+.add-salary-btn {
+    display: inline-flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    color: #087ff5;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.add-salary-btn:hover {
+    color: #0069d9;
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   DATATABLES WRAPPER
+   ========================================================= */
+
+#salaryTable_wrapper {
+    width: 100%;
+}
+
+
+/* =========================================================
+   DATATABLES TOP CONTROLS
+   ========================================================= */
+
+#salaryTable_wrapper .dt-layout-row:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 22px;
+
+    margin: 0;
+
+    background: #fafbfc;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+/* =========================================================
+   PAGE LENGTH
+   ========================================================= */
+
+#salaryTable_wrapper .dt-length {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #4b5563;
+
+    font-size: 14px;
+}
+
+
+/* DROPDOWN */
+
+#salaryTable_wrapper .dt-length select {
+    width: 62px;
+    height: 34px;
+
+    padding: 0 7px;
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+#salaryTable_wrapper .dt-length select:focus {
+    border-color: #087ff5;
+
+    box-shadow:
+        0 0 0 3px rgba(8, 127, 245, 0.10);
+}
+
+
+/* =========================================================
+   DATATABLES SEARCH
+   ========================================================= */
+
+#salaryTable_wrapper .dt-search {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #4b5563;
+
+    font-size: 14px;
+}
+
+
+/* SEARCH INPUT */
+
+#salaryTable_wrapper .dt-search input {
+    width: 220px;
+    height: 36px;
+
+    padding: 0 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    outline: none;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+#salaryTable_wrapper .dt-search input:focus {
+    border-color: #087ff5;
+
+    box-shadow:
+        0 0 0 3px rgba(8, 127, 245, 0.10);
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+   ========================================================= */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+#salaryTable {
+    width: 100% !important;
+
+    border-collapse: collapse;
+
+    table-layout: auto;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+#salaryTable thead th {
+    padding: 15px 16px;
+
+    background: #f8fafc;
+
+    color: #374151;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #dfe3e8;
+
+    border-right: 1px solid #edf0f2;
+}
+
+#salaryTable thead th:last-child {
+    border-right: none;
+}
+
+
+/* =========================================================
+   TABLE BODY
+   ========================================================= */
+
+#salaryTable tbody td {
+    padding: 17px 16px;
+
+    color: #4b5563;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #edf0f2;
+
+    border-right: 1px solid #edf0f2;
+}
+
+#salaryTable tbody td:last-child {
+    border-right: none;
+}
+
+
+/* =========================================================
+   TABLE ROW
+   ========================================================= */
+
+#salaryTable tbody tr {
+    background: #ffffff;
+
+    transition: background 0.15s ease;
+}
+
+#salaryTable tbody tr:hover {
+    background: #f8fbff;
+}
+
+
+/* =========================================================
+   SALARY VALUES
+   ========================================================= */
+
+#salaryTable tbody td:nth-child(4),
+#salaryTable tbody td:nth-child(5) {
+    font-weight: 600;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   JOB ROLE
+   ========================================================= */
+
+#salaryTable tbody td:nth-child(2) {
+    color: #087ff5;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   DATATABLES SORT ICON
+   ========================================================= */
+
+#salaryTable thead th {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   DATATABLES BOTTOM SECTION
+   ========================================================= */
+
+#salaryTable_wrapper .dt-layout-row:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 22px;
+
+    margin: 0;
+
+    background: #ffffff;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+
+/* =========================================================
+   SHOWING ENTRIES INFORMATION
+   ========================================================= */
+
+#salaryTable_wrapper .dt-info {
+    color: #6b7280;
+
+    font-size: 13px;
+
+    padding-top: 3px;
+
+    margin-right: 25px;
+}
+
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+#salaryTable_wrapper .dt-paging {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-left: auto;
+}
+
+
+/* PAGINATION BUTTON */
+
+#salaryTable_wrapper .dt-paging button {
+    min-width: 70px;
+    height: 34px;
+
+    padding: 0 12px;
+
+    border: 1px solid #d1d5db !important;
+
+    border-radius: 5px !important;
+
+    background: #ffffff !important;
+
+    color: #374151 !important;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+/* PAGINATION HOVER */
+
+#salaryTable_wrapper .dt-paging button:hover:not(.disabled) {
+    background: #f3f4f6 !important;
+
+    border-color: #bfc5cc !important;
+}
+
+
+/* PAGINATION ACTIVE */
+
+#salaryTable_wrapper .dt-paging button.current {
+    background: #087ff5 !important;
+
+    border-color: #087ff5 !important;
+
+    color: #ffffff !important;
+}
+
+
+/* PAGINATION DISABLED */
+
+#salaryTable_wrapper .dt-paging button.disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   EMPTY TABLE
+   ========================================================= */
+
+#salaryTable tbody td.dataTables_empty {
+    text-align: center !important;
+
+    padding: 45px 20px !important;
+
+    color: #9ca3af !important;
+
+    font-size: 14px !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f1f3f5;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+
+    border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+/* =========================================================
+   RESPONSIVE - 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 15px;
+    }
+
+
+    .page-header {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .employee-card {
+        align-items: flex-start;
+    }
+
+
+    .employee-info span {
+        display: block;
+
+        margin: 5px 0 0;
+    }
+
+
+    #salaryTable_wrapper .dt-layout-row:first-child {
+        gap: 15px;
+    }
+
+
+    #salaryTable_wrapper .dt-search input {
+        width: 180px;
+    }
+
+
+    #salaryTable_wrapper .dt-layout-row:last-child {
+        gap: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 650px
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 12px;
+    }
+
+
+    .page-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+
+    .page-header h1 {
+        font-size: 26px;
+    }
+
+
+    .employee-card {
+        padding: 16px;
+
+        align-items: flex-start;
+    }
+
+
+    .employee-image img,
+    .no-image {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .employee-info {
+        margin-left: 14px;
+    }
+
+
+    .employee-info h2 {
+        font-size: 18px;
+    }
+
+
+    .section-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+        padding: 18px;
+    }
+
+
+    #salaryTable_wrapper .dt-layout-row:first-child {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 16px 18px;
+
+        gap: 15px;
+    }
+
+
+    #salaryTable_wrapper .dt-search {
+        width: 100%;
+    }
+
+
+    #salaryTable_wrapper .dt-search input {
+        width: 100%;
+    }
+
+
+    #salaryTable_wrapper .dt-layout-row:last-child {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 16px 18px;
+
+        gap: 15px;
+    }
+
+
+    #salaryTable_wrapper .dt-info {
+        margin-right: 0;
+    }
+
+
+    #salaryTable_wrapper .dt-paging {
+        margin-left: 0;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 450px
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .back-btn {
+        width: 100%;
+    }
+
+
+    .employee-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .employee-info {
+        margin-left: 0;
+
+        margin-top: 14px;
+    }
+
+
+    .employee-info span {
+        margin-top: 6px;
+    }
+
+
+    #salaryTable_wrapper .dt-paging button {
+        min-width: 60px;
+    }
+
+}

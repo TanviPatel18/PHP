@@ -1,0 +1,449 @@
+/* =========================================================
+   ADD SALARY HISTORY
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f4f6f9;
+    color: #1f2937;
+}
+
+.salary-form-page {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+}
+
+.page-header h1 {
+    margin: 0 0 6px;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.page-header p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+    padding: 0 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    color: #374151;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #f3f4f6;
+}
+
+
+/* =========================================================
+   EMPLOYEE CARD
+   ========================================================= */
+
+.employee-card {
+    display: flex;
+    align-items: center;
+
+    padding: 20px 24px;
+
+    margin-bottom: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e5ea;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+
+/* =========================================================
+   EMPLOYEE IMAGE
+   ========================================================= */
+
+.employee-image {
+    flex-shrink: 0;
+}
+
+.employee-image img,
+.no-image {
+    width: 65px;
+    height: 65px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+.no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1ff;
+
+    color: #087ff5;
+
+    font-size: 23px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   EMPLOYEE INFO
+   ========================================================= */
+
+.employee-info {
+    margin-left: 18px;
+}
+
+.employee-info h2 {
+    margin: 0 0 7px;
+
+    font-size: 20px;
+
+    color: #111827;
+}
+
+.employee-info span {
+    margin-right: 20px;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   FORM CARD
+   ========================================================= */
+
+.form-card {
+    background: #ffffff;
+
+    border: 1px solid #e1e5ea;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+
+/* =========================================================
+   FORM HEADER
+   ========================================================= */
+
+.form-header {
+    padding: 22px 24px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.form-header h2 {
+    margin: 0 0 5px;
+
+    font-size: 20px;
+
+    color: #111827;
+}
+
+.form-header p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.error-message {
+    margin: 20px 24px 0;
+
+    padding: 12px 14px;
+
+    background: #fff1f2;
+
+    border: 1px solid #fecdd3;
+    border-radius: 6px;
+
+    color: #be123c;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+form {
+    padding: 24px;
+}
+
+
+/* =========================================================
+   FORM ROW
+   ========================================================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.form-group label span {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   INPUT + SELECT
+   ========================================================= */
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 42px;
+
+    padding: 0 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #087ff5;
+
+    box-shadow:
+        0 0 0 3px rgba(8, 127, 245, 0.10);
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 12px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+
+/* =========================================================
+   CANCEL
+   ========================================================= */
+
+.cancel-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+
+    padding: 0 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    color: #374151;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.cancel-btn:hover {
+    background: #f3f4f6;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+   ========================================================= */
+
+.save-btn {
+    height: 40px;
+
+    padding: 0 20px;
+
+    background: #087ff5;
+
+    border: 1px solid #087ff5;
+    border-radius: 6px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.save-btn:hover {
+    background: #0069d9;
+    border-color: #0069d9;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .employee-card {
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .page-header {
+        flex-direction: column;
+    }
+
+    .back-btn {
+        width: 100%;
+    }
+
+    .employee-card {
+        flex-direction: column;
+    }
+
+    .employee-info {
+        margin-left: 0;
+        margin-top: 14px;
+    }
+
+    .employee-info span {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .cancel-btn,
+    .save-btn {
+        width: 100%;
+    }
+
+}
